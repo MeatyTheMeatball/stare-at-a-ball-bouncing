@@ -6,26 +6,19 @@ let ballX = 40
 let rank = "Newbie"
 
 function setup() {
-  createCanvas(600, 400);
-  
-  arcX = -30
-  arcY=200
-  arcW=70
-  arcH=70
-  arcS=PI/4
-  arcE=7*PI/4
+  createCanvas(displayWidth, displayHeight);
+
 }
 
 function draw() {
   
   background(bkg);
-  textSize(50)
-  text('Bounces: ' + counter, 175, 75)
-  textSize(25)
-  text('Rank: ' + rank, 150,350)
+  textSize(displayWidth/15)
+  text('Bounces: ' + counter, width/3, height/5)
+  text('Rank: ' + rank, width/3,height/3)
   noStroke();
   fill(col);
- ellipse(ballX, height/2, 100,100)
+ ellipse(ballX, height/1.5, 100,100)
   ballX = ballX+speed
   if (ballX < 40 || ballX>width-40) {
     
