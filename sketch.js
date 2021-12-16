@@ -15,7 +15,8 @@ function draw() {
   background(bkg);
   textSize(displayWidth/15)
   text('Bounces: ' + counter, width/3, height/5)
-  text('Rank: ' + rank, width/3,height/3)
+  textSize(displayWidth/30)
+  text('Rank: ' + rank, width/width+20,height-20)
   noStroke();
   fill(col);
  ellipse(ballX, height/1.5, 100,100)
@@ -28,13 +29,36 @@ function draw() {
   if (counter > 199) {
     col = "red"
     rank = "Normie"
+    speed = speed + 1
   }
   if (counter > 499){
     col = "green"
     rank = "Regular"
+    speed = speed + 2
   }
   if (counter > 999) {
     col = "blue"
     rank = 'Acceptable'
+    speed = speed + 3
+  }
+  if (counter > 2499) {
+    col = "purple"
+    rank = 'Dedicated'
+    speed = speed + 4
+  }
+  if (counter > 4999) {
+    col = "orange"
+    rank = 'Time Waster'
+    speed = speed + 5
+  }
+  if (counter > 7499) {
+    col = "white"
+    rank = 'Why Are You Still Here?'
+    speed = speed + 10
+  }
+  if (counter > 9999) {
+    col = "brown"
+    rank = 'No Life'
+    speed = speed + 20
   }
 }
