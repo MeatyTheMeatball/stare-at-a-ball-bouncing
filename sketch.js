@@ -29,36 +29,36 @@ function draw() {
   if (counter > 199) {
     col = "red"
     rank = "Normie"
-    speed = speed + 1
+    speed = 11
   }
   if (counter > 499){
     col = "green"
     rank = "Regular"
-    speed = speed + 2
+    speed = 13
   }
   if (counter > 999) {
     col = "blue"
     rank = 'Acceptable'
-    speed = speed + 3
+    speed = 16
   }
   if (counter > 2499) {
     col = "purple"
     rank = 'Dedicated'
-    speed = speed + 4
+    speed = 20
   }
   if (counter > 4999) {
     col = "orange"
     rank = 'Time Waster'
-    speed = speed + 5
+    speed = 25
   }
   if (counter > 7499) {
     col = "white"
     rank = 'Why Are You Still Here?'
-    speed = speed + 10
+    speed = 35
   }
   if (counter > 9999) {
     col = "brown"
     rank = 'No Life'
-    speed = speed + 20
+    speed = 50
   }
 }
