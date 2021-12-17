@@ -24,7 +24,7 @@ function draw() {
   text('Corner Rank: ' + crank, width/width + 20, height - 20)
   noStroke();
   fill(col);
-  ellipse(ballX, ballY, 100, 100);
+  ellipse(ballX, ballY, width /13, width / 13);
   ballX = ballX + xspeed;
   ballY = ballY + yspeed
   if (ballX < 40 || ballX > width - 40) {
@@ -49,6 +49,15 @@ function draw() {
   }
   if (corners > 99) {
     crank = 'Very Lucky'
+  }
+  if (corners > 249) {
+    crank = 'Insanely Lucky'
+  }
+  if (corners > 499) {
+    crank = "How?????"
+  }
+  if (corners > 999) {
+    crank = 'RNG GOD'
   }
   if (counter > 199) {
     col = "red";
@@ -85,5 +94,42 @@ function draw() {
   if (counter > 19999) {
     col = '#513e00'
     rank = 'No Getting Past This' 
+  }
+  if (counter > 99999) {
+    col = '#3298eb'
+    rank = 'Holy Crap Just Leave'
+  }
+  if (counter > 149999) {
+    col = '#f5d64b'
+    rank = 'Do You Feel Accomplished Yet?'
+  }
+  if (counter > 249999) {
+    col = '#e4818a'
+    rank = 'Please Give Up...'
+  }
+  if (counter > 374999) {
+    col = '#0da17b'
+    rank = 'Stop.'
+  }
+  if (counter > 499999) {
+    col = '#98cd6c'
+    rank = 'Stop!'
+  }
+  if (counter > 749999) {
+    col = '#bb12ee'
+    rank = 'STOP!!!!'
+  }
+  if (counter > 999999) {
+    col = '#6fbede'
+    rank = '...'
+  }
+  if (counter > 1000099) {
+    col = 'white'
+    rank = 'Fine. You Win.'
+    xspeed = 0
+    yspeed = 0
+    ballX = width/2
+    ballY = height/2
+    
   }
 }
