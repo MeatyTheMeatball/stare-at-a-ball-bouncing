@@ -24,7 +24,7 @@ function setup() {
 function draw() {
   background(bkg);
   image(img, ballX, ballY, width /10, width / 10)
-  textSize(displayWidth / 15);
+  textSize(displayWidth / 17);
   textFont(myFont)
   text("Bounces: " + counter, width / 5, height / 5);
   textSize(displayWidth / 35);
