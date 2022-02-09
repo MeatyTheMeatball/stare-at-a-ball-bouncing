@@ -1,4 +1,11 @@
 
+let img;
+let myFont;
+  function preload() {
+  myFont = loadFont('./fonts/pressstart.ttf')
+  img = loadImage('./image1.png');
+}
+
 let xspeed = 15;
 let yspeed = 15;
 let counter = 0;
@@ -16,26 +23,28 @@ function setup() {
 
 function draw() {
   background(bkg);
+  image(img, ballX, ballY, width /10, width / 10)
   textSize(displayWidth / 15);
-  text("Bounces: " + counter, width / 3, height / 5);
-  textSize(displayWidth / 30);
+  textFont(myFont)
+  text("Bounces: " + counter, width / 5, height / 5);
+  textSize(displayWidth / 35);
   text("Rank: " + rank, width / width + 20, height - 80);
   text('Corners: ' + corners, width/ 3, height/ 3)
   text('Corner Rank: ' + crank, width/width + 20, height - 20)
   noStroke();
   fill(col);
-  ellipse(ballX, ballY, width /13, width / 13);
+  //ellipse(ballX, ballY, width /13, width / 13);
   ballX = ballX + xspeed;
   ballY = ballY + yspeed
-  if (ballX < 40 || ballX > width - 40) {
+  if (ballX < 10 || ballX > width - 100) {
     counter = counter + 1;
     xspeed = -xspeed;
   }
-  if (ballY < 40 || ballY > height - 40) {
+  if (ballY < 0 || ballY > height - 100) {
     counter = counter + 1;
     yspeed = -yspeed;
   }
-  if (ballX <40 && ballY < 40 || ballY > height - 40 && ballX > width - 40 || ballX <40 && ballY > height - 40 || ballX > width - 40 && ballY < 40) {
+  if (ballX < 10 && ballY < 0 || ballY > height - 100 && ballX > width - 100 || ballX < 10 && ballY > height - 100 || ballX > width - 100 && ballY < 0) {
     corners = corners + 1
   }
   if (corners > 9) {
