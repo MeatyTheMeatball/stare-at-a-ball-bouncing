@@ -1,10 +1,9 @@
 let img;
 let myFont;
 let sound;
-let imgurl = './image1.png';
   function preload() {
   myFont = loadFont('./fonts/pressstart.ttf')
-  img = loadImage(imgurl);
+  img = loadImage('./image1.png');
   sound = loadSound('./levelup.mp3')
 }
 
@@ -145,14 +144,15 @@ function draw() {
     ballY = height/2
   }
   if (counter > 1000100) {
-    col = 'white'
+    col = 'red'
     rank = 'Cheater.'
+    crank = 'Cheater.'
     xspeed = 0
     yspeed = 0
     ballX = width/2
     ballY = height/2
     bkg = "black"
-    imgurl = './bruh.jpg'
+  
     
   }
 }
