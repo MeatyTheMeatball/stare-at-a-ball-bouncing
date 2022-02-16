@@ -1,9 +1,11 @@
-
 let img;
 let myFont;
+let sound;
+let imgurl = './image1.png';
   function preload() {
   myFont = loadFont('./fonts/pressstart.ttf')
-  img = loadImage('./image1.png');
+  img = loadImage(imgurl);
+  sound = loadSound('./levelup.mp3')
 }
 
 let xspeed = 15;
@@ -24,9 +26,9 @@ function setup() {
 function draw() {
   background(bkg);
   image(img, ballX, ballY, width /10, width / 10)
-  textSize(displayWidth / 25);
+  textSize(displayWidth / 15);
   textFont(myFont)
-  text("Bounces: " + counter, width / 7, height / 7);
+  text("Bounces: " + counter, width / 5, height / 5);
   textSize(displayWidth / 35);
   text("Rank: " + rank, width / width + 20, height - 80);
   text('Corners: ' + corners, width/ 3, height/ 3)
@@ -71,6 +73,8 @@ function draw() {
   if (counter > 199) {
     col = "red";
     rank = "Normie";
+    sound.playMode('restart')
+    sound.play()
   }
   if (counter > 499) {
     col = "green";
@@ -139,6 +143,16 @@ function draw() {
     yspeed = 0
     ballX = width/2
     ballY = height/2
+  }
+  if (counter > 1000100) {
+    col = 'white'
+    rank = 'Cheater.'
+    xspeed = 0
+    yspeed = 0
+    ballX = width/2
+    ballY = height/2
+    bkg = "black"
+    imgurl = './bruh.jpg'
     
   }
 }
