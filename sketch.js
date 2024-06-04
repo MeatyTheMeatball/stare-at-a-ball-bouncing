@@ -51,23 +51,14 @@ var cornerlvl5reward = false;
 var cornerlvl6reward = false;
 var cornerlvl7reward = false;
 
+
+
 function setup() {
   createCanvas(displayWidth, displayHeight); 
-}
-function levelUp() {
-  sound.play()
-  bkg = "white"
- setTimeout(function() {
-  bkg = "black"
-  sound.stop()
-  
-}, 250);
-  
-  
   }
 function draw() {
   background(bkg);
-  image(img, ballX, ballY, width /12, width / 10)
+  image(img, ballX, ballY, width /10, width / 10)
   textSize(displayWidth / 20);
   textFont(myFont)
   text("Bounces: " + counter, width / 5, height / 5);
@@ -75,6 +66,7 @@ function draw() {
   text("Rank: " + rank, width / width + 20, height - 80);
   text('Corners: ' + corners, width/ 3, height/ 3)
   text('Corner Rank: ' + crank, width/width + 20, height - 20)
+
   noStroke();
   fill(col);
   //ellipse(ballX, ballY, width /13, width / 13);
@@ -101,6 +93,8 @@ function draw() {
         yspeed = yspeed - 5
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound2.play()
       cornerlvl1reward = true
     }
@@ -115,6 +109,8 @@ function draw() {
         yspeed = yspeed - 5
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound2.play()
       cornerlvl2reward = true
     }
@@ -129,6 +125,8 @@ function draw() {
         yspeed = yspeed - 5
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound2.play()
       cornerlvl3reward = true
     }
@@ -143,6 +141,8 @@ function draw() {
         yspeed = yspeed - 10
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound2.play()
       cornerlvl4reward = true
     }
@@ -157,6 +157,8 @@ function draw() {
         yspeed = yspeed - 10
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound2.play()
       cornerlvl5reward = true
     }
@@ -171,6 +173,8 @@ function draw() {
         yspeed = yspeed - 10
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound2.play()
       cornerlvl6reward = true
     }
@@ -185,11 +189,13 @@ function draw() {
         yspeed = yspeed - 30
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound2.play()
       cornerlvl7reward = true
     }
   }
-  if (counter > 199) {
+  if (counter > 0) {
     col = "red";
     rank = "Normie";
     if (bouncelvl1reward == false) {
@@ -200,6 +206,8 @@ function draw() {
         yspeed = yspeed - 1
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl1reward = true
     }
@@ -230,6 +238,8 @@ function draw() {
         yspeed = yspeed - 1
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl3reward = true
     }
@@ -245,6 +255,8 @@ function draw() {
         yspeed = yspeed - 2
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl4reward = true
     }
@@ -260,6 +272,8 @@ function draw() {
         yspeed = yspeed - 2
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl5reward = true
     }
@@ -275,6 +289,8 @@ function draw() {
         yspeed = yspeed - 2
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl6reward = true
     }
@@ -290,6 +306,8 @@ function draw() {
         yspeed = yspeed - 3
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl7reward = true
     }
@@ -305,6 +323,8 @@ function draw() {
         yspeed = yspeed - 3
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl8reward = true
     }
@@ -320,6 +340,8 @@ function draw() {
         yspeed = yspeed - 3
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl9reward = true
     }
@@ -335,6 +357,8 @@ function draw() {
         yspeed = yspeed - 3
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl10reward = true
     }
@@ -350,6 +374,8 @@ function draw() {
         yspeed = yspeed - 4
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl11reward = true
     }
@@ -365,6 +391,8 @@ function draw() {
         yspeed = yspeed - 4
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl12reward = true
     }
@@ -380,6 +408,8 @@ function draw() {
         yspeed = yspeed - 4
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl13reward = true
     }
@@ -395,6 +425,8 @@ function draw() {
         yspeed = yspeed - 4
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl14reward = true
     }
@@ -410,6 +442,8 @@ function draw() {
         yspeed = yspeed - 5
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl15reward = true
     }
@@ -425,6 +459,8 @@ function draw() {
         yspeed = -5
         xspeed = yspeed
       }
+      ballX = width / 2
+      ballY = height / 2
       sound.play()
       bouncelvl16reward = true
     }
