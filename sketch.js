@@ -151,10 +151,10 @@ function draw() {
     crank = 'Insanely Lucky'
     if (cornerlvl5reward == false) {
       if (yspeed > 0) {
-        yspeed = yspeed + 10
+        yspeed = yspeed + 20
         xspeed = yspeed
       } else {
-        yspeed = yspeed - 10
+        yspeed = yspeed - 20
         xspeed = yspeed
       }
       ballX = width / 2
@@ -167,10 +167,10 @@ function draw() {
     crank = "How?????"
     if (cornerlvl6reward == false) {
       if (yspeed > 0) {
-        yspeed = yspeed + 10
+        yspeed = yspeed + 60
         xspeed = yspeed
       } else {
-        yspeed = yspeed - 10
+        yspeed = yspeed - 60
         xspeed = yspeed
       }
       ballX = width / 2
@@ -183,10 +183,10 @@ function draw() {
     crank = 'RNG GOD'
     if (cornerlvl7reward == false) {
       if (yspeed > 0) {
-        yspeed = yspeed + 30
+        yspeed = yspeed + 100
         xspeed = yspeed
       } else {
-        yspeed = yspeed - 30
+        yspeed = yspeed - 100
         xspeed = yspeed
       }
       ballX = width / 2
@@ -195,7 +195,7 @@ function draw() {
       cornerlvl7reward = true
     }
   }
-  if (counter > 0) {
+  if (counter > 199) {
     col = "red";
     rank = "Normie";
     if (bouncelvl1reward == false) {
