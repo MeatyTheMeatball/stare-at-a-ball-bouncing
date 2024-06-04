@@ -67,7 +67,7 @@ function levelUp() {
   }
 function draw() {
   background(bkg);
-  image(img, ballX, ballY, width /10, width / 10)
+  image(img, ballX, ballY, width /12, width / 10)
   textSize(displayWidth / 20);
   textFont(myFont)
   text("Bounces: " + counter, width / 5, height / 5);
