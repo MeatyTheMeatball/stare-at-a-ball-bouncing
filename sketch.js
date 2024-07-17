@@ -74,10 +74,6 @@ function draw() {
   ballX = ballX + xspeed;
   ballY = ballY + yspeed
   
-  if (ballX > width || ballX < width || ballY > height || ballY < height) {
-    ballX = width / 2 //no cheaters allowed!!!
-    ballY = height / 2
-  }
   if (ballX < 10 || ballX > width - width/10) {
     counter = counter + 1;
     xspeed = -xspeed;
