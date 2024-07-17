@@ -54,15 +54,16 @@ var cornerlvl7reward = false;
 
 
 function setup() {
-  createCanvas(displayWidth, displayHeight); 
+  createCanvas(windowWidth, windowHeight); 
   }
 function draw() {
+  resizeCanvas(windowWidth, windowHeight);
   background(bkg);
   image(img, ballX, ballY, width /10, width / 10)
-  textSize(displayWidth / 20);
+  textSize(width / 20);
   textFont(myFont)
   text("Bounces: " + counter, width / 5, height / 5);
-  textSize(displayWidth / 35);
+  textSize(width / 35);
   text("Rank: " + rank, width / width + 20, height - 80);
   text('Corners: ' + corners, width/ 3, height/ 3)
   text('Corner Rank: ' + crank, width/width + 20, height - 20)
@@ -72,15 +73,15 @@ function draw() {
   //ellipse(ballX, ballY, width /13, width / 13);
   ballX = ballX + xspeed;
   ballY = ballY + yspeed
-  if (ballX < 10 || ballX > width - 100) {
+  if (ballX < 10 || ballX > width - width/10) {
     counter = counter + 1;
     xspeed = -xspeed;
   }
-  if (ballY < 0 || ballY > height - 100) {
+  if (ballY < 0 || ballY > height - height/10) {
     counter = counter + 1;
     yspeed = -yspeed;
   }
-  if (ballX < 10 && ballY < 0 || ballY > height - 100 && ballX > width - 100 || ballX < 10 && ballY > height - 100 || ballX > width - 100 && ballY < 0) {
+  if (ballX < 10 && ballY < 0 || ballY > height - height/10 && ballX > width - width/10 || ballX < 10 && ballY > height - height/10 || ballX > width - width/10 && ballY < 0) {
     corners = corners + 1
   }
   if (corners > 9) {
