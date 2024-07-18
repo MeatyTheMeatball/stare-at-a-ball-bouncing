@@ -21,8 +21,8 @@ let yspeed = 15;
 let counter = 0;
 let col = "yellow";
 let bkg = "black";
-let ballX = width/2
-let ballY = height/2
+let ballX;
+let ballY;
 let rank = "Newbie";
 let corners = 0
 let crank = 'No Satisfaction'
@@ -70,6 +70,8 @@ function draw() {
   imageMode(CENTER)
   resizeCanvas(windowWidth, windowHeight);
   background(bkg);
+  ballX = width/2
+  ballY = height/2
   image(img, ballX, ballY, width /10, width / 10)
   textSize(width / 20);
   textFont(myFont)
