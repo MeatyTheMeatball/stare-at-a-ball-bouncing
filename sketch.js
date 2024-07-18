@@ -2,7 +2,7 @@ let img;
 let myFont;
 let sound;
 let sound2;
-let strikes;
+let strikes = 0
   function preload() {
   myFont = loadFont('./fonts/pressstart.ttf')
   img = loadImage('./image1.png');
