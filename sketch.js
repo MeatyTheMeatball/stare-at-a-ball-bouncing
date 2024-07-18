@@ -2,7 +2,7 @@ let img;
 let myFont;
 let sound;
 let sound2;
-let strikes = 0
+// let strikes = 0
   function preload() {
   myFont = loadFont('./fonts/pressstart.ttf')
   img = loadImage('./image1.png');
@@ -80,10 +80,10 @@ function draw() {
   text("Rank: " + rank, width / width + 20, height - 80);
   text('Corners: ' + corners, width/ 3, height/ 3)
   text('Corner Rank: ' + crank, width/width + 20, height - 20)
-  if (strikes > 0) {
+  /* if (strikes > 0) {
     textSize(width / 50);
     text('Strikes: ' + strikes, width/width + 20, height - 100)
-  }
+  } */
 
   noStroke();
   fill(col);
@@ -102,7 +102,7 @@ function draw() {
   if (ballX <= width/20 && ballY <= height/20 || ballY >= height - height/20 && ballX >= width - width/20 || ballX <= width/20 && ballY >= height - height/10 || ballX >= width - width/20 && ballY <= height/20) {
     corners = corners + 1
   }
-  if (ballX > width || ballX < width-width || ballY > height || ballY < height - height) {
+  /* if (ballX > width || ballX < width-width || ballY > height || ballY < height - height) {
     if (strikes == 3) {
       anticheat()
     }
@@ -111,7 +111,7 @@ function draw() {
       ballY = height / 2
       strikes += 1
     }
-  }
+  } */
   if (corners > 9) {
     crank = 'A Little Bit Cool'
     if (cornerlvl1reward == false) {
