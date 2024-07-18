@@ -21,8 +21,8 @@ let yspeed = 15;
 let counter = 0;
 let col = "yellow";
 let bkg = "black";
-let ballX;
-let ballY;
+let ballX
+let ballY
 let rank = "Newbie";
 let corners = 0
 let crank = 'No Satisfaction'
@@ -65,13 +65,13 @@ function anticheat() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight); 
+  ballX = windowWidth/2
+  ballY = windowHeight/2
   }
 function draw() {
   imageMode(CENTER)
   resizeCanvas(windowWidth, windowHeight);
   background(bkg);
-  ballX = width/2
-  ballY = height/2
   image(img, ballX, ballY, width /10, width / 10)
   textSize(width / 20);
   textFont(myFont)
