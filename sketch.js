@@ -2,6 +2,7 @@ let img;
 let myFont;
 let sound;
 let sound2;
+let strikes;
   function preload() {
   myFont = loadFont('./fonts/pressstart.ttf')
   img = loadImage('./image1.png');
@@ -51,12 +52,22 @@ var cornerlvl5reward = false;
 var cornerlvl6reward = false;
 var cornerlvl7reward = false;
 
-
+function anticheat() {
+  col = 'red'
+  rank = 'Cheater.'
+  crank = 'Cheater.'
+  xspeed = 0
+  yspeed = 0
+  ballX = width/2
+  ballY = height/2
+  bkg = "black"
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight); 
   }
 function draw() {
+  imageMode(CENTER)
   resizeCanvas(windowWidth, windowHeight);
   background(bkg);
   image(img, ballX, ballY, width /10, width / 10)
@@ -67,6 +78,10 @@ function draw() {
   text("Rank: " + rank, width / width + 20, height - 80);
   text('Corners: ' + corners, width/ 3, height/ 3)
   text('Corner Rank: ' + crank, width/width + 20, height - 20)
+  if (strikes > 0) {
+    textSize(width / 50);
+    text('Strikes: ' + strikes, width/width + 20, height - 100)
+  }
 
   noStroke();
   fill(col);
@@ -74,16 +89,26 @@ function draw() {
   ballX = ballX + xspeed;
   ballY = ballY + yspeed
   
-  if (ballX < 10 || ballX > width - width/10) {
+  if (ballX <= width/20 || ballX >= width - width/20) {
     counter = counter + 1;
     xspeed = -xspeed;
   }
-  if (ballY < 0 || ballY > height - height/10) {
+  if (ballY <= height/20 || ballY >= height - height/20) {
     counter = counter + 1;
     yspeed = -yspeed;
   }
-  if (ballX < 10 && ballY < 0 || ballY > height - height/10 && ballX > width - width/10 || ballX < 10 && ballY > height - height/10 || ballX > width - width/10 && ballY < 0) {
+  if (ballX <= width/20 && ballY <= height/20 || ballY >= height - height/20 && ballX >= width - width/20 || ballX <= width/20 && ballY >= height - height/10 || ballX >= width - width/20 && ballY <= height/20) {
     corners = corners + 1
+  }
+  if (ballX > width || ballX < width-width || ballY > height || ballY < height - height) {
+    if (strikes == 3) {
+      anticheat()
+    }
+    else {
+      ballX = width / 2
+      ballY = height / 2
+      strikes += 1
+    }
   }
   if (corners > 9) {
     crank = 'A Little Bit Cool'
@@ -476,15 +501,14 @@ function draw() {
     ballY = height/2
   }
   if (counter > 1000100) {
-    col = 'red'
+    /* col = 'red'
     rank = 'Cheater.'
     crank = 'Cheater.'
     xspeed = 0
     yspeed = 0
     ballX = width/2
     ballY = height/2
-    bkg = "black"
-  
-    
+    bkg = "black" */
+    anticheat()
   }
 }
