@@ -52,6 +52,103 @@ var cornerlvl5reward = false;
 var cornerlvl6reward = false;
 var cornerlvl7reward = false;
 
+function checkCornerRewards() {
+  if (corners > 9 && !cornerlvl1reward) {
+    rewardPlayerCorner("A Little Bit Cool", 5);
+    cornerlvl1reward = true;
+  }
+  if (corners > 24 && !cornerlvl2reward) {
+    rewardPlayerCorner("Kinda Awesome", 5);
+    cornerlvl2reward = true;
+  }
+  if (corners > 49 && !cornerlvl3reward) {
+    rewardPlayerCorner("Factual", 5);
+    cornerlvl3reward = true;
+  }
+  if (corners > 99 && !cornerlvl4reward) {
+    rewardPlayerCorner("Very Lucky", 10);
+    cornerlvl4reward = true;
+  }
+  if (corners > 249 && !cornerlvl5reward) {
+    rewardPlayerCorner("Insanely Lucky", 20);
+    cornerlvl5reward = true;
+  }
+  if (corners > 499 && !cornerlvl6reward) {
+    rewardPlayerCorner("How?????", 60);
+    cornerlvl6reward = true;
+  }
+  if (corners > 999 && !cornerlvl7reward) {
+    rewardPlayerCorner("RNG GOD", 100);
+    cornerlvl7reward = true;
+}
+
+function checkBounceRewards() {
+  if (counter > 199 && !bouncelvl1reward) {
+    rewardPlayer("red", "Normie", 1);
+    bouncelvl1reward = true;
+  }
+  if (counter > 499 && !bouncelvl2reward) {
+    rewardPlayer("green", "Regular", 1);
+    bouncelvl2reward = true;
+  }
+  if (counter > 999 && !bouncelvl3reward) {
+    rewardPlayer("blue", "Acceptable", 1);
+    bouncelvl3reward = true;
+  }
+  if (counter > 2499 && !bouncelvl4reward) {
+    rewardPlayer("purple", "Dedicated", 2);
+    bouncelvl4reward = true;
+  }
+  if (counter > 4999 && !bouncelvl5reward) {
+    rewardPlayer("orange", "Time Waster", 2);
+    bouncelvl5reward = true;
+  }
+  if (counter > 7499 && !bouncelvl6reward) {
+    rewardPlayer("white", "Why Are You Still Here?", 2);
+    bouncelvl6reward = true;
+  }
+  if (counter > 9999 && !bouncelvl7reward) {
+    rewardPlayer("brown", "No Life", 3);
+    bouncelvl7reward = true;
+  }
+  if (counter > 14999 && !bouncelvl8reward) {
+    rewardPlayer("grey", "Go Touch Grass", 3);
+    bouncelvl8reward = true;
+  }
+  if (counter > 19999 && !bouncelvl9reward) {
+    rewardPlayer("#513e00", "No Getting Past This", 3);
+    bouncelvl9reward = true;
+  }
+  if (counter > 99999 && !bouncelvl10reward) {
+    rewardPlayer("#3298eb", "Holy Crap Just Leave", 3);
+    bouncelvl10reward = true;
+  }
+  if (counter > 149999 && !bouncelvl11reward) {
+    rewardPlayer("#f5d64b", "Do You Feel Accomplished Yet?", 4);
+    bouncelvl11reward = true;
+  }
+  if (counter > 249999 && !bouncelvl12reward) {
+    rewardPlayer("#e4818a", "Please Give Up...", 4);
+    bouncelvl12reward = true;
+  }
+  if (counter > 374999 && !bouncelvl13reward) {
+    rewardPlayer("0da17b", "Stop.", 4);
+    bouncelvl13reward = true;
+  }
+  if (counter > 499999 && !bouncelvl14reward) {
+    rewardPlayer("#98cd6c", "Stop!", 4);
+    bouncelvl14reward = true;
+  }
+  if (counter > 749999 && !bouncelvl15reward) {
+    rewardPlayer("#bb12ee", "STOP!!!!", 5);
+    bouncelvl15reward = true;
+  }
+  if (counter > 999999 && !bouncelvl16reward) {
+    rewardPlayer("#6fbede", "...", 5);
+    bouncelvl16reward = true;
+  }
+}
+   
 function anticheat() {
   col = 'red'
   rank = 'Cheater.'
@@ -112,388 +209,6 @@ function draw() {
       strikes += 1
     }
   } */
-  if (corners > 9) {
-    crank = 'A Little Bit Cool'
-    if (cornerlvl1reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 5
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 5
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound2.play()
-      cornerlvl1reward = true
-    }
-  }
-  if (corners > 24) {
-    crank = 'Kinda Awesome'
-    if (cornerlvl2reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 5
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 5
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound2.play()
-      cornerlvl2reward = true
-    }
-  }
-  if (corners > 49) {
-    crank = 'Factual'
-    if (cornerlvl3reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 5
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 5
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound2.play()
-      cornerlvl3reward = true
-    }
-  }
-  if (corners > 99) {
-    crank = 'Very Lucky'
-    if (cornerlvl4reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 10
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 10
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound2.play()
-      cornerlvl4reward = true
-    }
-  }
-  if (corners > 249) {
-    crank = 'Insanely Lucky'
-    if (cornerlvl5reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 20
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 20
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound2.play()
-      cornerlvl5reward = true
-    }
-  }
-  if (corners > 499) {
-    crank = "How?????"
-    if (cornerlvl6reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 60
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 60
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound2.play()
-      cornerlvl6reward = true
-    }
-  }
-  if (corners > 999) {
-    crank = 'RNG GOD'
-    if (cornerlvl7reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 100
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 100
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound2.play()
-      cornerlvl7reward = true
-    }
-  }
-  if (counter > 199) {
-    col = "red";
-    rank = "Normie";
-    if (bouncelvl1reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 1
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 1
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl1reward = true
-    }
-  }
-  if (counter > 499) {
-    col = "green";
-    rank = "Regular";
-    if (bouncelvl2reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 1
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 1
-        xspeed = yspeed
-      }
-      sound.play()
-      bouncelvl2reward = true
-    }
-  }
-  if (counter > 999) {
-    col = "blue";
-    rank = "Acceptable";
-    if (bouncelvl3reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 1
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 1
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl3reward = true
-    }
-  }
-  if (counter > 2499) {
-    col = "purple";
-    rank = "Dedicated";
-    if (bouncelvl4reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 2
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 2
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl4reward = true
-    }
-  }
-  if (counter > 4999) {
-    col = "orange";
-    rank = "Time Waster";
-    if (bouncelvl5reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 2
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 2
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl5reward = true
-    }
-  }
-  if (counter > 7499) {
-    col = "white";
-    rank = "Why Are You Still Here?";
-    if (bouncelvl6reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 2
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 2
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl6reward = true
-    }
-  }
-  if (counter > 9999) {
-    col = "brown";
-    rank = "No Life";
-    if (bouncelvl7reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 3
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 3
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl7reward = true
-    }
-  }
-  if (counter > 14999) {
-    col = "grey";
-    rank = "Go Touch Grass";
-    if (bouncelvl8reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 3
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 3
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl8reward = true
-    }
-}
-  if (counter > 19999) {
-    col = '#513e00'
-    rank = 'No Getting Past This' 
-    if (bouncelvl9reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 3
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 3
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl9reward = true
-    }
-  }
-  if (counter > 99999) {
-    col = '#3298eb'
-    rank = 'Holy Crap Just Leave'
-    if (bouncelvl10reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 3
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 3
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl10reward = true
-    }
-  }
-  if (counter > 149999) {
-    col = '#f5d64b'
-    rank = 'Do You Feel Accomplished Yet?'
-    if (bouncelvl11reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 4
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 4
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl11reward = true
-    }
-  }
-  if (counter > 249999) {
-    col = '#e4818a'
-    rank = 'Please Give Up...'
-    if (bouncelvl12reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 4
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 4
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl12reward = true
-    }
-  }
-  if (counter > 374999) {
-    col = '#0da17b'
-    rank = 'Stop.'
-    if (bouncelvl13reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 4
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 4
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl13reward = true
-    }
-  }
-  if (counter > 499999) {
-    col = '#98cd6c'
-    rank = 'Stop!'
-    if (bouncelvl14reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 4
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 4
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl14reward = true
-    }
-  }
-  if (counter > 749999) {
-    col = '#bb12ee'
-    rank = 'STOP!!!!'
-    if (bouncelvl15reward == false) {
-      if (yspeed > 0) {
-        yspeed = yspeed + 5
-        xspeed = yspeed
-      } else {
-        yspeed = yspeed - 5
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl15reward = true
-    }
-  }
-  if (counter > 999999) {
-    col = '#6fbede'
-    rank = '...'
-    if (bouncelvl16reward == false) {
-      if (yspeed > 0) {
-        yspeed = 5
-        xspeed = yspeed
-      } else {
-        yspeed = -5
-        xspeed = yspeed
-      }
-      ballX = width / 2
-      ballY = height / 2
-      sound.play()
-      bouncelvl16reward = true
-    }
-  }
   if (counter > 1000099) {
     col = 'white'
     rank = 'Fine. You Win.'
