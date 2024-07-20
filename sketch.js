@@ -81,6 +81,7 @@ function checkCornerRewards() {
     rewardPlayerCorner("RNG GOD", 100);
     cornerlvl7reward = true;
 }
+}
 
 function checkBounceRewards() {
   if (counter > 199 && !bouncelvl1reward) {
