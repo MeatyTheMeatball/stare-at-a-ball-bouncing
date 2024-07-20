@@ -248,4 +248,6 @@ function draw() {
     bkg = "black" */
     anticheat()
   }
+  checkBounceRewards();
+  checkCornerRewards();
 }
