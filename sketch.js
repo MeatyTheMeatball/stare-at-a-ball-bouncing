@@ -148,6 +148,25 @@ function checkBounceRewards() {
     bouncelvl16reward = true;
   }
 }
+
+function rewardPlayer(color, newRank, speedIncrease) {
+  col = color;
+  rank = newRank;
+  yspeed = yspeed > 0 ? yspeed + speedIncrease : yspeed - speedIncrease;
+  xspeed = yspeed;
+  ballX = width / 2;
+  ballY = height / 2;
+  sound.play();
+}
+
+function rewardPlayerCorner(newCrank, speedIncrease) {
+  crank = newCrank;
+  yspeed = yspeed > 0 ? yspeed + speedIncrease : yspeed - speedIncrease;
+  xspeed = yspeed;
+  ballX = width / 2;
+  ballY = height / 2;
+  sound2.play();
+}
    
 function anticheat() {
   col = 'red'
